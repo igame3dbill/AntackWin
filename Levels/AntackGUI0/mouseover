@@ -1,0 +1,10 @@
+loop
+get me
+
+player
+mark
+seti 1,2
+sndplay
+get me
+
+endloop

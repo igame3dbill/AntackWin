@@ -1,0 +1,1 @@
+get metime 1setf 2,2.0storef "time",1storef "dur",2setb 1,truestoreb "do",1

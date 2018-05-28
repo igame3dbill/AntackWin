@@ -1,0 +1,60 @@
+def "selobj"
+def "sel?"
+setb 1,false
+storeb "doMouseView",1
+storeb "doFog",1
+storeb "sel?",1
+player
+spin 0,0,0
+
+mark
+channel 2
+seti 1,3
+sndloop
+channel -1
+
+
+
+loop
+setb 1,true
+setb 2,false
+
+loadb "sel?",3
+if b,3,=,1
+loads "selobj",1
+get
+tex 1,"GUI00.png"
+endif
+
+mouse
+poke 3,7
+seti 1,2
+if i,3,=,1
+get coll
+
+
+click 2,n
+if b,2,=,1
+event 8
+else
+getName 2
+loads "selobj",1
+if s,2,!=,1
+event 2
+endif
+if b,3,!=,1
+event 2
+endif
+stores "selobj",2
+tex 1,"GUI01.png"
+endif
+
+storeb "sel?",1
+else
+storeb "sel?",2
+endif
+
+
+
+endloop
+//this script quits the app on a mouse
