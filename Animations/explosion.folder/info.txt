@@ -1,0 +1,7 @@
+15
+100
+explosion
+
+//frames
+//frame duration in milli-seconds
+//file name begin (before [number].png)
