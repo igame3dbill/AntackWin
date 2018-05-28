@@ -1,0 +1,95 @@
+get "player01"
+sets 1,"missile01"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,21
+storei "snd",1
+
+get "player02"
+sets 1,"missile02"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,21
+storei "snd",1
+
+get "player03"
+sets 1,"missile03"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,21
+storei "snd",1
+
+get "player04"
+sets 1,"missile04"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,21
+storei "snd",1
+
+get "player05"
+sets 1,"missile05"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,21
+storei "snd",1
+
+get "player06"
+sets 1,"missile06"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,21
+storei "snd",1
+
+get "player11"
+sets 1,"missile11"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,10
+storei "snd",1
+
+get "player12"
+sets 1,"missile12"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,11
+storei "snd",1
+
+get "player13"
+sets 1,"missile13"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,12
+storei "snd",1
+
+get "player14"
+sets 1,"missile14"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,13
+storei "snd",1
+
+get "player15"
+sets 1,"missile15"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,14
+storei "snd",1
+
+get "player16"
+sets 1,"missile16"
+def "miss",p
+stores "miss",1
+def "snd",p
+seti 1,15
+storei "snd",1

@@ -1,0 +1,1 @@
+get medef "dur",p//duration of fadedef "time",pdef "do",psetb 1,falsestoreb "do",1loopget mesetb 1,trueloadb "do",2if b,2,=,1put 0,0,-0.1spin 0,0,0lux truehud trueseti 1,1time 1loadf "time",4multf 4,-1addf 1,f4loadf "dur",6reci 6multf 1,f6alphaendifendloop

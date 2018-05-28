@@ -1,0 +1,69 @@
+//Base-specific script
+loop
+setb 1,true
+setb 3,false
+
+get me
+loadi "life",1
+seti 2,0
+if i,1,>,2
+loads "miss",1
+
+get
+loadb "reached",2
+if b,2,=,1
+storeb "reached",3
+get me
+storeb "busy",3
+endif
+
+get me
+loadb "busy",2
+if b,2,=,1
+mark
+loadf "targetX",4
+loadf "targetY",5
+loadf "targetZ",6
+addf 2,1.0
+get
+loadb "busy",2
+if b,2,!=,1
+storeb "busy",1//missile is busy also
+time 7
+storef "time",7
+storef "x",1
+storef "y",2
+storef "z",3
+
+put
+//new code
+multf 2,-1
+addf 5,f2
+storef "dif",5
+//
+//ignore y-axis
+setf 2,0.0
+setf 5,0.0
+dist 7
+storef "dist",7
+setf 1,f4
+setf 3,f6
+
+//goto/stop is a dirty trick. Goto always faces a spot, but it is used to move also, so we call stop.
+goto
+stop
+seti 1,5
+mark
+sndplay
+pose "Stand","Stand",0.0,0.0
+pose "starting","falling",5.9,0.0
+
+randi 5,12,1
+setf 1,i1
+multf 1,0.2
+storef "vari",1
+
+endif
+endif
+endif
+endloop

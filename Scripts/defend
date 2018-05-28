@@ -1,0 +1,67 @@
+get me
+def "x",p
+def "y",p
+def "z",p
+def "do",p
+def "t",p//true if we have a target
+def "time",p
+def "target",p
+setb 1,false
+storeb "do",1
+storeb "t",1
+loop
+get me
+setb 1,true
+loadb "do",2
+if b,2,=,1
+
+//Attack missiles are in the air for 4 seconds, so a defend missile definately has timed out after 3 secs
+setf 3,3.0
+time 1
+loadf "time",2
+multf 2,-1
+addf 1,f2
+if f,1,>=,3
+setb 2,false
+storeb "do",2
+endif
+
+loadb "t",3
+if b,3,=,1
+loads "target",1
+get
+mark
+loadb "busy",2
+if b,2,!=,1
+get me
+storeb "do",2//boolean 2 is already false here
+put 0,-1000,0
+endif
+
+else
+loadf "x",1
+loadf "y",2
+loadf "z",3
+endif
+setf 4,f1
+setf 5,f2
+setf 6,f3
+get me
+goto
+stop
+mark
+dist 7
+reci 7
+
+multf 2,-1
+addf 5,f2//5 is height difference
+multf 5,f7
+passed 1
+multf 1,65.0
+multf 5,f1//how fast? (1,2x)
+move
+mark
+addf 2,f5
+put
+endif
+endloop

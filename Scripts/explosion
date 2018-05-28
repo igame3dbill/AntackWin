@@ -1,0 +1,35 @@
+get me
+def "doit",p
+def "time",p
+setb 1,false
+storeb "doit",1
+lux true
+
+loop
+get me
+setb 1,true
+loadb "doit",2
+if b,2,=,1
+time 4
+loadf "time",3
+multf 3,-1
+addf 4,f3
+setf 2,1.5
+
+if f,4,<,2
+player
+axis
+get me
+addf 2,180
+multf 1,-1.0
+spin
+anim 1,1
+else
+setb 2,false
+storeb "doit",2
+put -100,-100,-100
+endif
+
+
+endif
+endloop

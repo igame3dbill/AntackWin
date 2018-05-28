@@ -1,0 +1,105 @@
+//Missile flies about 4 seconds
+get me
+def "busy",p
+def "time",p
+def "x",p
+def "y",p
+def "z",p
+def "dist",p
+def "dif",p//Height difference
+def "reached",p
+def "vari",p
+setf 1,1.0
+storef "vari",1
+setb 1,false
+storeb "busy",1
+storeb "reached",1
+
+loop
+get me
+setb 1,true
+loadb "busy",2
+if b,2,=,1
+
+mark 8
+loadf "x",1
+loadf "y",2
+loadf "z",3
+put
+
+loadf "time",4
+time 5
+multf 4,-1
+addf 5,f4
+multf 5,0.75//time / 1.5, will make missiles fly slower
+setf 6,f5
+setf 1,f5
+
+//new code (3 lines)
+loadf "dif",11
+multf 11,0.25
+multf 11,f5
+//
+
+loadf "vari",7
+multf 6,20.0
+multf 6,f7//variate
+multf 5,f5
+multf 5,-5
+multf 5,f7//variate
+
+loadf "dist",7
+multf 7,0.25
+multf 1,f7
+move
+mark
+
+addf 2,f5
+addf 2,f6
+addf 2,f11
+put
+setf 4,f8
+setf 5,f9
+setf 6,f10
+
+seti 2,0
+getTeam
+teampoke 3,1
+if i,3,>,2
+seti 1,6
+seti 4,2
+if i,3,=,4
+get coll
+
+loadb "mis",2
+if b,2,=,1
+loadi "life",5
+addi 5,-1
+storei "life",5
+multi 5,50
+setf 16,f1
+setf 1,i5
+size
+time 1
+storef "t",1
+setf 1,f16
+mac "bexp"
+else
+mac "exp"
+endif
+else
+mac "exp"
+endif
+
+
+get me
+sndplay
+addf 2,-100.0//make it go way down
+put
+storeb "reached",1
+setb 1,false
+storeb "busy",1
+endif
+
+endif
+endloop
